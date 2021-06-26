@@ -21,13 +21,19 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               {% if user.is_authenticated %}
           <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           {% else %}
       </ul>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'login' %}">Login</a>
 
       </ul>
+      </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+
+      </ul>
+
       {% endif %}
     </div>
   </div>
