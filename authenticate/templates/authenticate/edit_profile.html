@@ -2,11 +2,12 @@
 
 {% block content %}
 
-	<h2 class="text-center"> Register </h2>
+	<h2 class="text-center"> Edit Profile </h2>
 
-	<div class = "col-md-6 offset-md-3">
+	<!-- <div class = "col-md-6 offset-md-3"> -->
 
-	<form method = "POST" action="{% url 'register' %}">
+
+	<form method = "POST" action="{% url 'edit_profile' %}">
 		{% csrf_token %}
 
 		{% if form.errors %}
@@ -22,11 +23,15 @@
 
 				
 			{% endfor %}
-		</div>
+
 		{% endif %}
 
 		{{ form.as_p }}
 
-		<input type="submit" value="register" class="btn btn-secondary">
+	
+		<input type="submit" value="Edit Profile" class="btn btn-secondary">
+
 	</form>
+	<br/>
+	<p><small><a href ="{% url 'change_password' %}">Click Here</a> To change Your Password</small></p>
 	{% endblock %}
